@@ -34,7 +34,7 @@ var myMap = L.map("map", {
 });
 
 // create circle layers
-var businessData = "data/melbourne_business_data.geojson";
+var businessData = "melbourne_business_data.geojson";
 
 function markerSize(capacity) { return capacity / 20 };
 
