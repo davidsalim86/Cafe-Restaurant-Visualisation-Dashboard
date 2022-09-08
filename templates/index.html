@@ -2,49 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Melbourne Business Census</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cafes and restaurants - growth 2002-2020</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/rSlider.min.css">
+  <link rel="stylesheet" href="../static/css/styleIndex.css">
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 jumbotron text-center">
-                <h1>Melbourne Business Census Dashboard</h1>
-                <p>Use the interactive charts below to explore the dataset</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="well">
-                    <h5>census year.:</h5>
-                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <h3>XXXX</h3>
-                <div id="bar"></div>
-            </div>
-            <div class="col-md-6 text-center">
-                <h3>XXXX</h3>
-                <div id="pie"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>XXXX</h3>
-                <div id="XXXX"></div>
-            </div>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="app.js"></script>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/map">Seating Map</a></li>
+        <li><a href="/table">Data Table </a></li>
+      </ul>
+    </div>   
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Cafes and restaurants - City of Melbourne</h1>
+        <p>Growth from 2002-2020</p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="values">
+          <span id="range1">
+              2002
+          </span>
+          <span> &dash; </span>
+          <span id="range2">
+              2022
+          </span>
+      </div>
+      <div class="container">
+          <div class="slider-track"></div>
+          <input type="range" min="2002" max="2022" value="2010" id="slider-1" oninput="slideOne()">
+          <input type="range" min="2002" max="2022" value="2012" id="slider-2" oninput="slideTwo()">
+      </div>
+  </div>
+      <div class="row">
+        <div class="col-md-6 text-center">
+            <h3>XXXX</h3>
+            <div id="bar"></div>
+        </div>
+        <div class="col-md-6 text-center">
+            <h3>XXXX</h3>
+            <div id="pie"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>XXXX</h3>
+            <div id="XXXX"></div>
+        </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="js/rSlider.min.js"></script>
+  <script src="../static/js/logicIndex.js"></script>
+  
 </body>
 
 </html>
