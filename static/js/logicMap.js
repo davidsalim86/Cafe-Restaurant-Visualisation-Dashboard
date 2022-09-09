@@ -52,16 +52,16 @@ d3.json(businessData).then(function (data) {
         var fillcolor = "";
         switch (true) {
             case (features[i].properties.number_of_seats > 1500):
-                fillcolor = "#80ff80";
+                fillcolor = "#4d8000";
                 break;
             case (features[i].properties.number_of_seats > 1000):
-                fillcolor = "#66ff66";
+                fillcolor = "#7acc00";
                 break;
             case (features[i].properties.number_of_seats > 500):
-                fillcolor = "#00cc00";
+                fillcolor = "#a3ff1a";
                 break;
             default:
-                fillcolor = "#009933";
+                fillcolor = "#c2ff66";
         }
         if (features[i].properties.census_year == 2020 && features[i].properties.seating_type == "Seats - Indoor"){
             L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
@@ -132,10 +132,10 @@ var legend = L.control({ position: "bottomright" });
 legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
     div.innerHTML += "<h4>Seat Capacity</h4>";
-    div.innerHTML += "<p style=\"background-color: #80ff80\"> > 1500</p>";
-    div.innerHTML += "<p style=\"background-color: #66ff66\"> 1000 - 1500</p>";
-    div.innerHTML += "<p style=\"background-color: #00cc00\"> 500 - 1000</p>";
-    div.innerHTML += "<p style=\"background-color: #009933\"> 0 - 500</p>"
+    div.innerHTML += "<p style=\"background-color: #4d8000\"> > 1500</p>";
+    div.innerHTML += "<p style=\"background-color: #7acc00\"> 1000 - 1500</p>";
+    div.innerHTML += "<p style=\"background-color: #a3ff1a\"> 500 - 1000</p>";
+    div.innerHTML += "<p style=\"background-color: #c2ff66\"> 0 - 500</p>"
     return div;
 };
 legend.addTo(myMap);
