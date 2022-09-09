@@ -28,15 +28,15 @@ var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
 
 // create map
 var myMap = L.map("map", {
-    center: [-37.8136, 144.9431],
-    zoom: 14,
+    center: [-37.8141, 144.9635],
+    zoom: 15,
     layers: [dark]
 });
 
 // create circle layers
 const businessData = "/api/melbournebusinessdata";
 
-function markerSize(capacity) { return capacity / 20 };
+function markerSize(capacity) { return capacity / 22 };
 
 var seatIndoor2020 = new L.LayerGroup();
 var seatOutdoor2020 = new L.LayerGroup();
