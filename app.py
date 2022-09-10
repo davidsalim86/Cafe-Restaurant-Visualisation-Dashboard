@@ -72,5 +72,19 @@ def total_indoor():
     num_indoor = str(database_df.loc[database_df['seating_type'] == 'Seats - Indoor','number_of_seats'].sum())
     return num_indoor
 
+# get number of seats per industry
+@app.route("/api/seats_per_industry")
+def seats_per_industry():
+    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+    database_df = database_df.iloc[: , 1:]
+    database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
+
+    gp_df = database_df.groupby('industry_anzsic4_description', as_index=False)['number_of_seats'].sum()
+    gp_df = pd.DataFrame(gp_df)
+    #getting top 5 for now
+    gp_df = gp_df.head(5)
+    seats_JSON = gp_df.to_json(orient = 'records')
+    return seats_JSON
+
 if __name__ == "__main__":
     app.run()

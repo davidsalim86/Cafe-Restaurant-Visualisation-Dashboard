@@ -5,6 +5,8 @@ function buildPlot(yearSelection) {
     d3.json("/api/businessyear").then(function(data) {
        
         // varaibles
+
+        
         // **************************************
         // OVERALL STATS
         // **************************************
@@ -23,7 +25,9 @@ function buildPlot(yearSelection) {
         // *************************
         // Industry Seat Count Chart
         // *************************
-        
+        d3.json("/api/seats_per_industry").then(function(data) {
+            console.log(data)
+        });
 
 
 
