@@ -10,7 +10,8 @@ from pandas_geojson import to_geojson
 #################################################
 # Database Setup
 #################################################
-engine = create_engine('postgresql://postgres:David$1986@localhost:5432/Melbourne_Business_db')
+# engine = create_engine('postgresql://postgres:David$1986@localhost:5432/Melbourne_Business_db')
+engine = create_engine("sqlite:///sqlite3/melbournebusinessdatabase.db")
 
 #################################################
 # Flask Setup

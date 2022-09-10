@@ -9,15 +9,22 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />>
+    crossorigin="" />
 
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/styleMap.css">
 
 </head>
 <body>
-
-  <!-- The div that holds our map -->
+    
+  <div class="container-fluid">
+    <nav class="navbar-nav" style="margin-right: 0">
+      <button type="button"><a class="nav-link" href="/">Dashboard</a></button>
+      <button type="button"><a class="nav-link" href="/map">Seating Map</a></button>
+      <button type="button"><a class="nav-link" href="/table">Data Table</a></button> 
+    </nav>
+  </div>
+    <!-- The div that holds our map -->
   <div id="map"></div>
 
   <!-- D3 -->
