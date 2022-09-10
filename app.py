@@ -86,5 +86,18 @@ def seats_per_industry():
     seats_JSON = gp_df.to_json(orient = 'records')
     return seats_JSON
 
+# get number of seats per area
+@app.route("/api/seats_per_area")
+def seats_per_area():
+    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+    database_df = database_df.iloc[: , 1:]
+
+    database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
+    gpA_df = database_df.groupby('clue_small_area', as_index=False)['number_of_seats'].sum()
+    gpA_df = pd.DataFrame(gpA_df)
+    gpA_df = gpA_df.head(5)
+    seats_JSON = gpA_df.to_json(orient = 'records')
+    return seats_JSON
+
 if __name__ == "__main__":
     app.run()

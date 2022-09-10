@@ -66,6 +66,46 @@ function buildCountText(yearSelection) {
 
 }
 
+function buildArea(yearSelection) {
+    //load json data 
+
+        // *************************
+        // Industry Seat Count Chart
+        // *************************
+        d3.json("/api/seats_per_area").then(function(data) {
+            console.log(data)
+
+             // varaibles
+
+            var bchartIndustry = []
+            var bchartSeats = []
+
+            for ( i = 0; i < data.length; i++) {
+                bchartIndustry.push(data[i].clue_small_area);
+                bchartSeats.push(data[i].number_of_seats);
+              }
+            
+              var hozBarData = [{
+                // x is OTU ID of the top 10 samples
+                y: bchartIndustry.reverse(),
+                // y is OTU sample values ( it is in the same order as the id)
+                x: bchartSeats.reverse(),
+                text: bchartSeats.reverse(),
+                type: "bar",
+                orientation: "h",
+            }];
+
+            var hozBarLayout = {
+                title:`Total Seat Counts Per Area in Year :XXX`,
+                xaxis: { title: "Seat Count" },
+                yaxis: { title: "Area" }
+            };
+
+            Plotly.newPlot('pie', hozBarData, hozBarLayout)
+
+        });
+};
+
 function buildPlot(yearSelection) {
     //load json data 
 
@@ -76,6 +116,7 @@ function buildPlot(yearSelection) {
         console.log(address)
 
         buildBarchart(2002);
+        buildArea(2002);
         buildCountText(2002);
 
 
