@@ -1,33 +1,15 @@
-console.log("fuck you")
+function buildBarchart(yearSelection){
 
-function buildPlot(yearSelection) {
-    //load json data 
-    d3.json("/api/businessyear").then(function(data) {
-       
-        // varaibles
-
-        var bchartIndustry = []
-        var bchartSeats = []
-        // **************************************
-        // OVERALL STATS
-        // **************************************
-
-        // HTML objects
-
-        var tEstablishments = document.getElementById('tEstablishments');
-        var tOutdoor = document.getElementById('tOutdoor');
-        var tIndoor = document.getElementById('tIndoor');
-
-
-        var address = data[0].trading_name;
-        console.log(address)
-
-
-        // *************************
+    // *************************
         // Industry Seat Count Chart
         // *************************
         d3.json("/api/seats_per_industry").then(function(data) {
             console.log(data)
+
+             // varaibles
+
+            var bchartIndustry = []
+            var bchartSeats = []
 
             for ( i = 0; i < data.length; i++) {
                 bchartIndustry.push(data[i].industry_anzsic4_description);
@@ -45,7 +27,6 @@ function buildPlot(yearSelection) {
             }];
 
             var hozBarLayout = {
-
                 title:`Total Seat Counts Per Industry in Year :XXX`,
                 xaxis: { title: "Seat Count" },
                 yaxis: { title: "Industry" }
@@ -55,9 +36,16 @@ function buildPlot(yearSelection) {
 
         });
 
+}
 
+function buildCountText(yearSelection) {
+     // HTML objects
 
-        // *************************
+     var tEstablishments = document.getElementById('tEstablishments');
+     var tOutdoor = document.getElementById('tOutdoor');
+     var tIndoor = document.getElementById('tIndoor');
+
+      // *************************
         // UPDATE TOTAL VALUES
         // *********************
 
@@ -76,21 +64,24 @@ function buildPlot(yearSelection) {
             tIndoor.innerHTML = totalData;
         });
 
+}
+
+function buildPlot(yearSelection) {
+    //load json data 
+
+    d3.json("/api/businessyear").then(function(data) {
+       
+        
+        var address = data[0].trading_name;
+        console.log(address)
+
+        buildBarchart(2002);
+        buildCountText(2002);
+
+
+
 
     });
 };
 
-// // creating dropdown menu function
-// function createDropdown(){
-//         d3.json("samples.json").then(function(data) {
-//             // gets the list of sample ids then for each id in the list, create an option html tag with the id as the value and id
-//             var sample_id_list = data.names;
-//             sample_id_list.forEach(data => {
-//                 d3.select("#selDataset").append("option").text(data).property("value", data);
-//         })
-
-//     })       
-// };
-
-// createDropdown();
 buildPlot(2019);
