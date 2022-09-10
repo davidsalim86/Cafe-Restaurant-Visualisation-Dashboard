@@ -88,7 +88,7 @@ def seats_per_industry():
 def seats_per_area():
     database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
     database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
-    not_top5 = database_df.groupby('clue_small_area').sum().sort_values('number_of_seats',ascending = False).index[5:]
+    not_top5 = database_df.groupby('clue_small_area').sum().sort_values('number_of_seats',ascending = False).index[10:]
     database_df = database_df.replace(not_top5, 'Other')
     gpA_df = database_df.groupby('clue_small_area', as_index=False).sum().sort_values('number_of_seats')
     seats_JSON = gpA_df.to_json(orient = 'records')
