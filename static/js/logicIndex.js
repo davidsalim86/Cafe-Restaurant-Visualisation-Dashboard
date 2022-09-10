@@ -9,21 +9,22 @@ function buildPlot(yearSelection) {
         // OVERALL STATS
         // **************************************
 
-        var total_indoor_seats = 0;
-        var total_outdoor_seats = 0;
-        var total_establishments = 0;
-
-
         // HTML objects
 
         var tEstablishments = document.getElementById('tEstablishments');
         var tOutdoor = document.getElementById('tOutdoor');
         var tIndoor = document.getElementById('tIndoor');
 
-        console.log(data);
-        var address = data[0].trading_name;
 
+        var address = data[0].trading_name;
         console.log(address)
+
+
+        // *************************
+        // Industry Seat Count Chart
+        // *************************
+        
+
 
 
         // *************************
@@ -44,6 +45,7 @@ function buildPlot(yearSelection) {
         d3.json("/api/total_indoor").then(function(totalData) {
             tIndoor.innerHTML = totalData;
         });
+
 
     });
 };
