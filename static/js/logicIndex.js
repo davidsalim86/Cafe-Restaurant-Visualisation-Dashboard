@@ -5,7 +5,7 @@ function sliderChange() {
     var sliderValue = mySlider.getValue();
     console.log(sliderValue);
     // call build chart function, passing the slider's selected year
-    buildBarchart(sliderValue);
+    buildPlot(sliderValue);
 }
 
 // js library slider creation
@@ -49,7 +49,7 @@ function buildBarchart(yearSelection) {
         }];
 
         var hozBarLayout = {
-            title: `Total Seat Counts Per Industry in Year :XXX`,
+            title: `Total Seat Counts Per Industry in Year ` + yearSelection,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Industry" },
             margin: {l: 180, r:0}
@@ -73,17 +73,17 @@ function buildCountText(yearSelection) {
     // *********************
 
     // call flask ruote which returns total establishment count
-    d3.json("/api/total_esta").then(function (totalData) {
+    d3.json("/api/total_esta/" + yearSelection).then(function (totalData) {
         tEstablishments.innerHTML = totalData;
     });
 
     // outdoor
-    d3.json("/api/total_outdoor").then(function (totalData) {
+    d3.json("/api/total_outdoor/" + yearSelection).then(function (totalData) {
         tOutdoor.innerHTML = totalData;
     });
 
     //indoor
-    d3.json("/api/total_indoor").then(function (totalData) {
+    d3.json("/api/total_indoor/" + yearSelection).then(function (totalData) {
         tIndoor.innerHTML = totalData;
     });
 
@@ -95,7 +95,7 @@ function buildArea(yearSelection) {
     // *************************
     // Industry Seat Count Chart
     // *************************
-    d3.json("/api/seats_per_area").then(function (data) {
+    d3.json("/api/seats_per_area/" + yearSelection).then(function (data) {
         console.log(data)
 
         // varaibles
@@ -117,7 +117,7 @@ function buildArea(yearSelection) {
         }];
 
         var hozBarLayout = {
-            title: `Total Seat Counts Per Area in Year :XXX`,
+            title: `Total Seat Counts Per Area in Year ` + yearSelection,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Area" },
             margin: {l: 150, r: 0}
@@ -130,14 +130,9 @@ function buildArea(yearSelection) {
 
 function buildPlot(yearSelection) {
     //load json data 
-
-    d3.json("/api/businessyear").then(function (data) {
-        var address = data[0].trading_name;
-        console.log(address)
-        buildBarchart(2002);
-        buildArea(2002);
-        buildCountText(2002);
-    });
+        buildBarchart(yearSelection);
+        buildArea(yearSelection);
+        buildCountText(yearSelection);
 };
 
-buildPlot(2019);
+buildPlot(2002);
