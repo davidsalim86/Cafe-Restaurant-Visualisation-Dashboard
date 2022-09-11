@@ -87,23 +87,19 @@ function buildCountText(yearSelection) {
 
 }
 
-function buildArea(yearSelection) {
+function buildBarchart2(yearSelection) {
     //load json data 
-
     // *************************
     // Industry Seat Count Chart
     // *************************
     d3.json("/api/seats_per_area/" + yearSelection).then(function (data) {
-        // varaibles
-
+        // variables
         var bchartIndustry = []
         var bchartSeats = []
-
         for (i = 0; i < data.length; i++) {
             bchartIndustry.push(data[i].clue_small_area);
             bchartSeats.push(data[i].number_of_seats);
         }
-
         var hozBarData = [{
             y: bchartIndustry,
             x: bchartSeats,
@@ -111,24 +107,53 @@ function buildArea(yearSelection) {
             type: "bar",
             orientation: "h",
         }];
-
         var hozBarLayout = {
             title: `Seat Counts by Area in Year ` + yearSelection,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Area" },
             margin: {l: 150, r: 0}
         };
-
         Plotly.newPlot('bar2', hozBarData, hozBarLayout)
-
     });
 };
+
+function buildBarchart3(yearSelection) {
+    //load json data 
+    // *************************
+    // Industry Seat Count Chart
+    // *************************
+    d3.json("/api/est_per_area/" + yearSelection).then(function (data) {
+        // variables
+        var bchartIndustry = []
+        var bchartEst = []
+        for (i = 0; i < data.length; i++) {
+            bchartIndustry.push(data[i].clue_small_area);
+            bchartEst.push(data[i].trading_name);
+        }
+        var hozBarData = [{
+            y: bchartIndustry,
+            x: bchartEst,
+            text: bchartEst,
+            type: "bar",
+            orientation: "h",
+        }];
+        var hozBarLayout = {
+            title: `Est Counts by Area in Year ` + yearSelection,
+            xaxis: { title: "Est. Count" },
+            yaxis: { title: "Area" },
+            margin: {l: 150, r: 0}
+        };
+        Plotly.newPlot('bar3', hozBarData, hozBarLayout)
+    });
+};
+
 
 function buildPlot(yearSelection) {
     //load json data 
         buildBarchart(yearSelection);
-        buildArea(yearSelection);
         buildCountText(yearSelection);
+        buildBarchart2(yearSelection);
+        buildBarchart3(yearSelection)
 };
 
-buildPlot(2002);
+buildPlot();
