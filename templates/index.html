@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/rSlider.min.css">
   <link rel="stylesheet" href="../static/css/styleIndex.css">
+  
 
 </head>
 
@@ -27,28 +28,34 @@
       </ul>
     </div>   
   </nav>
+ 
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <h1>Cafes and restaurants - City of Melbourne</h1>
         <p>Growth from 2002-2020</p>
-      </div>
+        <input type="text" id="sampleSlider" class="slider">
     </div>
+
     <div class="wrapper">
-      <div class="values">
+      
+      <!-- <div class="values">
           <span id="range1">
               2002
           </span>
           <span> &dash; </span>
           <span id="range2">
               2022
-          </span>
+          </span> -->
       </div>
       <div class="container">
-          <div class="slider-track"></div>
-          <input type="range" min="2002" max="2022" value="2010" id="slider-1" oninput="slideOne()">
-          <input type="range" min="2002" max="2022" value="2012" id="slider-2" oninput="slideTwo()">
+        
+          <div class="slider-track">
+            
+          </div>
+          
       </div>
+     
   </div>
     <div class="row">
       <div class="col-md-4 text-center">
@@ -79,9 +86,10 @@
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="js/rSlider.min.js"></script>
+  <script src="../static/js/rSlider.min.js"></script>
   <script src="../static/js/logicIndex.js"></script>
-  
+  <!--  rslider.min.js is a custom js library used to create the year selection slider -->
+  <!-- https://slawomir-zaziablo.github.io/range-slider/ -->
 </body>
 
 </html>

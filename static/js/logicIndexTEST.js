@@ -1,14 +1,10 @@
 
 
-// function called when the slider's value is changed
 function sliderChange() {
     var sliderValue = mySlider.getValue();
     console.log(sliderValue);
-    // call build chart function, passing the slider's selected year
-    buildPlot(sliderValue);
 }
 
-// js library slider creation
 var mySlider = new rSlider({
     target: '#sampleSlider',
     values: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
@@ -22,12 +18,15 @@ var mySlider = new rSlider({
 
 
 
+
 function buildBarchart(yearSelection) {
 
     // *************************
     // Industry Seat Count Chart
     // *************************
-    d3.json("/api/seats_per_industry/" + yearSelection).then(function (data) {
+    d3.json("/api/seats_per_industry").then(function (data) {
+        console.log(data)
+
         // varaibles
 
         var bchartIndustry = []
@@ -47,7 +46,7 @@ function buildBarchart(yearSelection) {
         }];
 
         var hozBarLayout = {
-            title: `Total Seat Counts Per Industry in Year ` + yearSelection,
+            title: `Total Seat Counts Per Industry in Year :XXX`,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Industry" },
             margin: {l: 180, r:0}
@@ -71,17 +70,17 @@ function buildCountText(yearSelection) {
     // *********************
 
     // call flask ruote which returns total establishment count
-    d3.json("/api/total_esta/" + yearSelection).then(function (totalData) {
+    d3.json("/api/total_esta").then(function (totalData) {
         tEstablishments.innerHTML = totalData;
     });
 
     // outdoor
-    d3.json("/api/total_outdoor/" + yearSelection).then(function (totalData) {
+    d3.json("/api/total_outdoor").then(function (totalData) {
         tOutdoor.innerHTML = totalData;
     });
 
     //indoor
-    d3.json("/api/total_indoor/" + yearSelection).then(function (totalData) {
+    d3.json("/api/total_indoor").then(function (totalData) {
         tIndoor.innerHTML = totalData;
     });
 
@@ -93,7 +92,9 @@ function buildArea(yearSelection) {
     // *************************
     // Industry Seat Count Chart
     // *************************
-    d3.json("/api/seats_per_area/" + yearSelection).then(function (data) {
+    d3.json("/api/seats_per_area").then(function (data) {
+        console.log(data)
+
         // varaibles
 
         var bchartIndustry = []
@@ -113,7 +114,7 @@ function buildArea(yearSelection) {
         }];
 
         var hozBarLayout = {
-            title: `Total Seat Counts Per Area in Year ` + yearSelection,
+            title: `Total Seat Counts Per Area in Year :XXX`,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Area" },
             margin: {l: 150, r: 0}
@@ -126,9 +127,14 @@ function buildArea(yearSelection) {
 
 function buildPlot(yearSelection) {
     //load json data 
-        buildBarchart(yearSelection);
-        buildArea(yearSelection);
-        buildCountText(yearSelection);
+
+    d3.json("/api/businessyear").then(function (data) {
+        var address = data[0].trading_name;
+        console.log(address)
+        buildBarchart(2002);
+        buildArea(2002);
+        buildCountText(2002);
+    });
 };
 
-buildPlot(2002);
+buildPlot(2019);

@@ -49,33 +49,33 @@ def businessyear():
     return index_json
 
 # function which returns total number of unique addresses as a string 
-@app.route("/api/total_esta")
-def total_esta():
-    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+@app.route("/api/total_esta/<year>")
+def total_esta(year):
+    database_df = pd.read_sql(f"Select * from melbourne_business where census_year ={year}",engine)
     database_df = database_df.iloc[: , 1:]
     num_esta = str(database_df['trading_name'].nunique())
     return num_esta
 
-@app.route("/api/total_outdoor")
-def total_outdoor():
-    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+@app.route("/api/total_outdoor/<year>")
+def total_outdoor(year):
+    database_df = pd.read_sql(f"Select * from melbourne_business where census_year ={year}",engine)
     database_df = database_df.iloc[: , 1:]
     database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
     num_outdoor = str(database_df.loc[database_df['seating_type'] == 'Seats - Outdoor','number_of_seats'].sum())
     return num_outdoor
 
-@app.route("/api/total_indoor")
-def total_indoor():
-    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+@app.route("/api/total_indoor/<year>")
+def total_indoor(year):
+    database_df = pd.read_sql(f"Select * from melbourne_business where census_year ={year}",engine)
     database_df = database_df.iloc[: , 1:]
     database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
     num_indoor = str(database_df.loc[database_df['seating_type'] == 'Seats - Indoor','number_of_seats'].sum())
     return num_indoor
 
 # get number of seats per industry
-@app.route("/api/seats_per_industry")
-def seats_per_industry():
-    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+@app.route("/api/seats_per_industry/<year>")
+def seats_per_industry(year):
+    database_df = pd.read_sql(f"Select * from melbourne_business where census_year ={year}",engine)
     database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
     not_top5 = database_df.groupby('industry_anzsic4_description').sum().sort_values('number_of_seats',ascending = False).index[5:]
     database_df = database_df.replace(not_top5, 'Other')
@@ -84,11 +84,11 @@ def seats_per_industry():
     return seats_JSON
 
 # get number of seats per area
-@app.route("/api/seats_per_area")
-def seats_per_area():
-    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+@app.route("/api/seats_per_area/<year>")
+def seats_per_area(year):
+    database_df = pd.read_sql(f"Select * from melbourne_business where census_year ={year}",engine)
     database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
-    not_top5 = database_df.groupby('clue_small_area').sum().sort_values('number_of_seats',ascending = False).index[5:]
+    not_top5 = database_df.groupby('clue_small_area').sum().sort_values('number_of_seats',ascending = False).index[10:]
     database_df = database_df.replace(not_top5, 'Other')
     gpA_df = database_df.groupby('clue_small_area', as_index=False).sum().sort_values('number_of_seats')
     seats_JSON = gpA_df.to_json(orient = 'records')
