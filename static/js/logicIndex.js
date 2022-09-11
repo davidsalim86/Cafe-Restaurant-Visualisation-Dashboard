@@ -58,7 +58,7 @@ function buildBarchart(yearSelection) {
         }];
         var hozBarLayout = {
             title: `Seat Counts by Area in Year ` + yearSelection,
-            xaxis: { title: "Seat Count", margin: {r:100} },
+            xaxis: { title: "Seat Count"},
             // yaxis: { title: "Area" },
             margin: {l: 185, r: 5}
         };
