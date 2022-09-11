@@ -11,12 +11,12 @@ function sliderChange() {
 // js library slider creation
 var mySlider = new rSlider({
     target: '#sampleSlider',
-    values: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+    values: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
     range: false,
     tooltip: true,
     scale: true,
     labels: true,
-    set: [2010],
+    set: [2020],
     onChange: sliderChange
 });
 
@@ -47,7 +47,7 @@ function buildBarchart(yearSelection) {
         }];
 
         var hozBarLayout = {
-            title: `Total Seat Counts Per Industry in Year ` + yearSelection,
+            title: `Seat Counts by Industry in Year` + yearSelection,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Industry" },
             margin: {l: 180, r:0}
@@ -113,7 +113,7 @@ function buildArea(yearSelection) {
         }];
 
         var hozBarLayout = {
-            title: `Total Seat Counts Per Area in Year ` + yearSelection,
+            title: `Seat Counts by Area in Year` + yearSelection,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Area" },
             margin: {l: 150, r: 0}
