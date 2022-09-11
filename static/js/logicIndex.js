@@ -28,8 +28,6 @@ function buildBarchart(yearSelection) {
     // Industry Seat Count Chart
     // *************************
     d3.json("/api/seats_per_industry/" + yearSelection).then(function (data) {
-        console.log(data)
-
         // varaibles
 
         var bchartIndustry = []
@@ -96,8 +94,6 @@ function buildArea(yearSelection) {
     // Industry Seat Count Chart
     // *************************
     d3.json("/api/seats_per_area/" + yearSelection).then(function (data) {
-        console.log(data)
-
         // varaibles
 
         var bchartIndustry = []
