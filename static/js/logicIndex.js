@@ -1,3 +1,10 @@
+
+
+function sliderChange() {
+    var sliderValue = mySlider.getValue();
+    console.log(sliderValue);
+}
+
 var mySlider = new rSlider({
     target: '#sampleSlider',
     values: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
@@ -5,8 +12,12 @@ var mySlider = new rSlider({
     tooltip: true,
     scale: true,
     labels: true,
-    set: [2010]
+    set: [2010],
+    onChange: sliderChange
 });
+
+
+
 
 function buildBarchart(yearSelection) {
 
