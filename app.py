@@ -73,9 +73,9 @@ def total_indoor():
     return num_indoor
 
 # get number of seats per industry
-@app.route("/api/seats_per_industry")
-def seats_per_industry():
-    database_df = pd.read_sql("Select * from melbourne_business where census_year = 2010",engine)
+@app.route("/api/seats_per_industry/<year>")
+def seats_per_industry(year):
+    database_df = pd.read_sql(f"Select * from melbourne_business where census_year ={year}",engine)
     database_df['number_of_seats'] = database_df['number_of_seats'].astype('int')
     not_top5 = database_df.groupby('industry_anzsic4_description').sum().sort_values('number_of_seats',ascending = False).index[5:]
     database_df = database_df.replace(not_top5, 'Other')

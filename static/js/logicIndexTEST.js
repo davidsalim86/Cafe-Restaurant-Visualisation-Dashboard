@@ -1,14 +1,10 @@
 
 
-// function called when the slider's value is changed
 function sliderChange() {
     var sliderValue = mySlider.getValue();
     console.log(sliderValue);
-    // call build chart function, passing the slider's selected year
-    buildBarchart(sliderValue);
 }
 
-// js library slider creation
 var mySlider = new rSlider({
     target: '#sampleSlider',
     values: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
@@ -22,12 +18,13 @@ var mySlider = new rSlider({
 
 
 
+
 function buildBarchart(yearSelection) {
 
     // *************************
     // Industry Seat Count Chart
     // *************************
-    d3.json("/api/seats_per_industry/" + yearSelection).then(function (data) {
+    d3.json("/api/seats_per_industry").then(function (data) {
         console.log(data)
 
         // varaibles
