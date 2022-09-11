@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Melbourne Business Analysis</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/styleAnalysis.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/analysis">Analysis</a></li>
+        <li><a href="/map">Seating Map</a></li>
+        <li><a href="/table">Data Table </a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <div class= "jumbotron text-center" style="background-color: rgb(248, 246, 246);">
+      <div class="container">
+        <h1> <strong>Cafes and restaurants </strong> <br>City of Melbourne</h1>
+        <p><strong>Enter year to interact with the table </strong></p>
+      </div>
+    </div>
+  <div class="container">
+    <div class="row margin-top-10">
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
+        <aside class="filters">
+          <div class="panel panel-default">
+            <div class="panel-heading">Select Year to Compare</div>
+            <div class="panel-body">
+              <form id="form">
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Enter Year</label>
+                      <input class="form-control" id="datetime" type="text" placeholder="2020">
+                    </li>
+                    <li class="filter2 list-group-item">
+                      <label for="date">Compare with Year</label>
+                      <input class="form-control" id="datetime" type="text" placeholder="2019">
+                    </li>
+                  </ul>
+                </div>
+                <button id="button" type="button" class="btn btn-default">Analyse</button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-8">
+        <div id="table-area" class="table-responsive">
+          <table id="melbournebusiness-table" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table-head">Area</th>
+                <th class="table-head">Selected 1st Year</th>
+                <th class="table-head">Selected 2nd Year</th>
+                <th class="table-head">Change</th>
+                <th class="table-head">% Change</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</body>
+<script src="../static/js/logicAnalysis.js"></script>
+
+</html>

@@ -117,7 +117,7 @@ function buildArea(yearSelection) {
             title: `Total Seat Counts Per Area in Year :XXX`,
             xaxis: { title: "Seat Count" },
             yaxis: { title: "Area" },
-            margin: {l: 150, r: 0}
+            margin: {l: 180, r: 10}
         };
 
         Plotly.newPlot('bar2', hozBarData, hozBarLayout)

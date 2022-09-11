@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cafes and restaurants - growth 2002-2020</title>
+  <title>Melbourne Business Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/rSlider.min.css">
   <link rel="stylesheet" href="../static/css/styleIndex.css">
@@ -14,52 +14,41 @@
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-    <div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Dashboard</a></li>
+        <li><a href="/analysis">Analysis</a></li>
         <li><a href="/map">Seating Map</a></li>
         <li><a href="/table">Data Table </a></li>
       </ul>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>Cafes and restaurants - City of Melbourne</h1>
-        <p>Growth from 2002-2020</p>
+
+  <div class= "jumbotron text-center" style="background-color: rgb(248, 246, 246);">
+    <div class="container">
+      <h1> <strong>Cafes and restaurants </strong> <br>City of Melbourne</h1>
+      <p><strong>Select a year in the slider to interact with the dashboard</strong></p>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="row" style="margin-bottom: 50px;">
+      <div class="col-md-12">
         <input type="text" id="sampleSlider" class="slider">
       </div>
-      <div class="wrapper">
-        <!-- <div class="values">
-          <span id="range1">
-              2002
-          </span>
-          <span> &dash; </span>
-          <span id="range2">
-              2022
-          </span> -->
-      </div>
-      <div class="container">
-        <div class="slider-track">
-        </div>
-      </div>
-    </div>
+    </div>	
     <div class="row">
       <div class="col-md-4 text-center">
-        <h3>Indoor Seats</h3>
-        <div id="tIndoor">100</div>
+        <h4>Indoor Seats</h4>
+        <div style="font-size: x-large" id="tIndoor"></div>
       </div>
       <div class="col-md-4 text-center">
-        <h3>Outdoor Seats</h3>
-        <div id="tOutdoor">400</div>
+        <h4>Outdoor Seats</h4>
+        <div style="font-size: x-large" id="tOutdoor"></div>
       </div>
       <div class="col-md-4 text-center">
-        <h3>Establishments</h3>
-        <div id="tEstablishments">6500</div>
+        <h4>Establishments</h4>
+        <div style="font-size: x-large" id="tEstablishments"></div>
       </div>
     </div>
     <div class="row">
@@ -71,18 +60,19 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 text-center">
         <div id="bar3"></div>
       </div>
-      <div class="col-md-3"></div>
+      <div class="col-md-2"></div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="../static/js/rSlider.min.js"></script>
-  <script src="../static/js/logicIndex.js"></script>
-  <!--  rslider.min.js is a custom js library used to create the year selection slider -->
-  <!-- https://slawomir-zaziablo.github.io/range-slider/ -->
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="../static/js/rSlider.min.js"></script>
+<script src="../static/js/logicIndex.js"></script>
+<!--  rslider.min.js is a custom js library used to create the year selection slider -->
+<!-- https://slawomir-zaziablo.github.io/range-slider/ -->
 </body>
 
 </html>
