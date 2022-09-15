@@ -5,7 +5,7 @@ from flask import Flask, jsonify, render_template
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from pandas_geojson import to_geojson
-
+from flask_sqlalchemy import SQLAlchemy
 
 #################################################
 # Database Setup
@@ -17,6 +17,8 @@ engine = create_engine("sqlite:///sqlite3/melbournebusinessdatabase.db")
 # Flask Setup
 #################################################
 app = Flask(__name__)
+
+db = SQLAlchemy(app)
 
 #################################################
 # Flask Routes
