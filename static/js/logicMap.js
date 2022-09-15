@@ -106,166 +106,166 @@ d3.json(businessData).then(function (data) {
                 radius: markerSize(features[i].properties.number_of_seats)
             }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2018);
         }
-        else if (features[i].properties.census_year == 2017){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2017);
-        }
-        else if (features[i].properties.census_year == 2016){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2016);
-        }
-        else if (features[i].properties.census_year == 2015){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2015);
-        }
-        else if (features[i].properties.census_year == 2014){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2014);
-        }
-        else if (features[i].properties.census_year == 2013){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2013);
-        }
-        else if (features[i].properties.census_year == 2012){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2012);
-        }
-        else if (features[i].properties.census_year == 2011){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2011);
-        }
-        else if (features[i].properties.census_year == 2010){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2010);
-        }
-        else if (features[i].properties.census_year == 2009){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2009);
-        }
-        else if (features[i].properties.census_year == 2008){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2008);
-        }
-        else if (features[i].properties.census_year == 2007){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2007);
-        }
-        else if (features[i].properties.census_year == 2006){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2006);
-        }
-        else if (features[i].properties.census_year == 2005){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2005);
-        }
-        else if (features[i].properties.census_year == 2004){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2004);
-        }
-        else if (features[i].properties.census_year == 2003){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2003);
-        }
-        else if (features[i].properties.census_year == 2002){
-            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-                fillOpacity: 1,
-                color: "black",
-                weight: 0.5,
-                opacity: 0.5,
-                fillColor: fillcolor,
-                radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2002);
-        }
+        // else if (features[i].properties.census_year == 2017){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2017);
+        // }
+        // else if (features[i].properties.census_year == 2016){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2016);
+        // }
+        // else if (features[i].properties.census_year == 2015){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2015);
+        // }
+        // else if (features[i].properties.census_year == 2014){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2014);
+        // }
+        // else if (features[i].properties.census_year == 2013){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2013);
+        // }
+        // else if (features[i].properties.census_year == 2012){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2012);
+        // }
+        // else if (features[i].properties.census_year == 2011){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2011);
+        // }
+        // else if (features[i].properties.census_year == 2010){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2010);
+        // }
+        // else if (features[i].properties.census_year == 2009){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2009);
+        // }
+        // else if (features[i].properties.census_year == 2008){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2008);
+        // }
+        // else if (features[i].properties.census_year == 2007){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2007);
+        // }
+        // else if (features[i].properties.census_year == 2006){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2006);
+        // }
+        // else if (features[i].properties.census_year == 2005){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2005);
+        // }
+        // else if (features[i].properties.census_year == 2004){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2004);
+        // }
+        // else if (features[i].properties.census_year == 2003){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2003);
+        // }
+        // else if (features[i].properties.census_year == 2002){
+        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+        //         fillOpacity: 1,
+        //         color: "black",
+        //         weight: 0.5,
+        //         opacity: 0.5,
+        //         fillColor: fillcolor,
+        //         radius: markerSize(features[i].properties.number_of_seats)
+        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2002);
+        // }
     }
 });
 
@@ -296,22 +296,22 @@ var overlayMaps = {
     "2020": year2020,
     "2019": year2019,
     "2018": year2018,
-    "2017": year2017,
-    "2016": year2016,
-    "2015": year2015,
-    "2014": year2014,
-    "2013": year2013,
-    "2012": year2012,
-    "2011": year2011,
-    "2010": year2010,
-    "2009": year2009,
-    "2008": year2008,
-    "2007": year2007,
-    "2006": year2006,
-    "2005": year2005,
-    "2004": year2004,
-    "2003": year2003,
-    "2002": year2002,
+    // "2017": year2017,
+    // "2016": year2016,
+    // "2015": year2015,
+    // "2014": year2014,
+    // "2013": year2013,
+    // "2012": year2012,
+    // "2011": year2011,
+    // "2010": year2010,
+    // "2009": year2009,
+    // "2008": year2008,
+    // "2007": year2007,
+    // "2006": year2006,
+    // "2005": year2005,
+    // "2004": year2004,
+    // "2003": year2003,
+    // "2002": year2002,
 };
 
 L.control.layers(baseMaps, overlayMaps, { collapsed: true }).addTo(myMap);
