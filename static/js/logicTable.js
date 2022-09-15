@@ -1,19 +1,17 @@
-const businessData = "/api/melbournebusinessdata";
+const businessData = "/api/melbournebusinessdatatable/";
 var tbody = d3.select("tbody");
 var button = d3.select("#button");
 var form = d3.select("#form");
 
-d3.json(businessData).then(function (data) {
-    var features = data.features
-    console.log(features);
-    for (var i = 0; i < features.length; i++) {
+// table
+d3.json(businessData + 2020).then(function (data) {
+    console.log(data);
+    for (var i = 0; i < data.length; i++) {
         var row = tbody.append("tr");
-        if (data.features[i].properties.census_year == 2020) {
-            Object.entries(data.features[i].properties).forEach(([key, value]) => {
-                var cell = row.append("td");
-                cell.text(value);
-            });
-        }
+        Object.entries(data[i]).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
     }
 });
 
@@ -24,19 +22,15 @@ form.on("submit", runFilter);
 function runFilter() {
     tbody.html("");
     d3.event.preventDefault();
-    d3.json(businessData).then(function (data){
-        var features = data.features
-        var filterInput = d3.select("#datetime").property("value");
+    var filterInput = d3.select("#datetime").property("value");
+    d3.json(businessData + filterInput).then(function (data){
         console.log(filterInput)
-        
-        for (var i = 0; i < features.length; i++) {
+        for (var i = 0; i < data.length; i++) {
             var row = tbody.append("tr");
-            if (data.features[i].properties.census_year == filterInput) {
-                Object.entries(data.features[i].properties).forEach(([key, value]) => {
-                    var cell = row.append("td");
-                    cell.text(value);
-                });
-            }
+            Object.entries(data[i]).forEach(([key, value]) => {
+                var cell = row.append("td");
+                cell.text(value);
+            });
         }
     })
 }

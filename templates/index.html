@@ -17,26 +17,28 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Dashboard</a></li>
         <li><a href="/analysis">Analysis</a></li>
-        <li><a href="/map">Seating Map</a></li>
         <li><a href="/table">Data Table </a></li>
+        <li><a href="/map">Seating Map</a></li>
+
       </ul>
     </div>
   </nav>
 
 
-  <div class= "jumbotron text-center" style="background-color: rgb(248, 246, 246);">
+  <div class="jumbotron text-center" style="background-color: rgb(248, 246, 246);">
     <div class="container">
       <h1> <strong>Cafes and restaurants </strong> <br>City of Melbourne</h1>
+      <p><strong>Dashboard</strong></p>
       <p><strong>Select a year in the slider to interact with the dashboard</strong></p>
     </div>
   </div>
 
-<div class="container">
+  <div class="container">
     <div class="row" style="margin-bottom: 50px;">
       <div class="col-md-12">
         <input type="text" id="sampleSlider" class="slider">
       </div>
-    </div>	
+    </div>
     <div class="row">
       <div class="col-md-4 text-center">
         <h4>Indoor Seats</h4>
@@ -65,14 +67,14 @@
         <div id="bar3"></div>
       </div>
       <div class="col-md-2"></div>
+    </div>
   </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="../static/js/rSlider.min.js"></script>
-<script src="../static/js/logicIndex.js"></script>
-<!--  rslider.min.js is a custom js library used to create the year selection slider -->
-<!-- https://slawomir-zaziablo.github.io/range-slider/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="../static/js/rSlider.min.js"></script>
+  <script src="../static/js/logicIndex.js"></script>
+  <!--  rslider.min.js is a custom js library used to create the year selection slider -->
+  <!-- https://slawomir-zaziablo.github.io/range-slider/ -->
 </body>
 
 </html>

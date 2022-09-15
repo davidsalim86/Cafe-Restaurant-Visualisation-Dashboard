@@ -60,7 +60,7 @@ function buildBarchart(yearSelection) {
             title: `Seat Counts by Area in Year ` + yearSelection,
             xaxis: { title: "Seat Count"},
             // yaxis: { title: "Area" },
-            margin: {l: 185, r: 5}
+            margin: {l: 185, r: 15}
         };
         Plotly.newPlot('bar', hozBarData, hozBarLayout)
     });
@@ -86,7 +86,7 @@ function buildBarchart2(yearSelection) {
             title: `Establishment Counts by Area in Year ` + yearSelection,
             xaxis: { title: "Establishment Count" },
             // yaxis: { title: "Area" },
-            margin: {l: 185, r: 5}
+            margin: {l: 185, r: 15}
         };
         Plotly.newPlot('bar2', hozBarData, hozBarLayout)
     });
@@ -112,7 +112,7 @@ function buildBarchart3(yearSelection) {
             title: `Seat Counts by Industry in Year ` + yearSelection,
             xaxis: { title: "Seat Count" },
             // yaxis: { title: "Industry" },
-            margin: {l: 290, r:5}
+            margin: {l: 290, r:15}
         };
         Plotly.newPlot('bar3', hozBarData, hozBarLayout)
     });

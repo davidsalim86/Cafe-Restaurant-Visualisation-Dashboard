@@ -17,40 +17,43 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Dashboard</a></li>
         <li><a href="/analysis">Analysis</a></li>
-        <li><a href="/map">Seating Map</a></li>
         <li><a href="/table">Data Table </a></li>
+        <li><a href="/map">Seating Map</a></li>
       </ul>
     </div>
   </nav>
 
-    <div class= "jumbotron text-center" style="background-color: rgb(248, 246, 246);">
-      <div class="container">
-        <h1> <strong>Cafes and restaurants </strong> <br>City of Melbourne</h1>
-        <p><strong>Enter year to interact with the table </strong></p>
-      </div>
+  <div class="jumbotron text-center" style="background-color: rgb(248, 246, 246);">
+    <div class="container">
+      <h1> <strong>Cafes and restaurants </strong> <br>City of Melbourne</h1>
+      <p><strong>Analysis Table</strong></p>
+      <p><strong>Enter year in the form to interact with the table </strong></p>
     </div>
+  </div>
+
   <div class="container">
+
     <div class="row margin-top-10">
       <div class="col-md-1"></div>
       <div class="col-md-2">
         <aside class="filters">
           <div class="panel panel-default">
-            <div class="panel-heading">Select Year to Compare</div>
+            <div class="panel-heading">Enter Year to Compare Seating No</div>
             <div class="panel-body">
               <form id="form">
                 <div class="form-group">
                   <ul class="list-group" id="filters">
                     <li class="filter list-group-item">
                       <label for="date">Enter Year</label>
-                      <input class="form-control" id="datetime" type="text" placeholder="2020">
+                      <input class="form-control" id="datetime1" type="text" placeholder="2020">
                     </li>
                     <li class="filter2 list-group-item">
                       <label for="date">Compare with Year</label>
-                      <input class="form-control" id="datetime" type="text" placeholder="2019">
+                      <input class="form-control" id="datetime2" type="text" placeholder="2019">
                     </li>
                   </ul>
                 </div>
-                <button id="button" type="button" class="btn btn-default">Analyse</button>
+                <button id="button" type="button" class="btn btn-default center">Analyse</button>
               </form>
             </div>
           </div>
@@ -62,8 +65,8 @@
             <thead>
               <tr>
                 <th class="table-head">Area</th>
-                <th class="table-head">Seating No <br> Selected 1st Year</th>
-                <th class="table-head">Seating No <br> Selected 2nd Year</th>
+                <th class="table-head" id="year 1">Seating No <br> 2020</th>
+                <th class="table-head" id="year 2">Seating No <br> 2019</th>
                 <th class="table-head">Change</th>
                 <th class="table-head">% Change</th>
               </tr>
@@ -74,8 +77,22 @@
       </div>
       <div class="col-md-1"></div>
     </div>
+    <h3 class="text-center" style="margin-top: 50px;margin-bottom: 25px;"><strong> Total Number of Seating by Year
+      </strong> <br>
+      <p>2002 to 2020</p>
+    </h3>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 text-center">
+        <div id="line"></div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
   </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="../static/js/logicAnalysis.js"></script>
 
 </html>

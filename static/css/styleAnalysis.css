@@ -96,3 +96,11 @@ select {
     text-align: center;
     min-width: 120px;
 }
+
+.center {
+    position: relative;
+    margin-left: -50px;
+    left: 50%;
+    width: 100px;
+    bottom: 0px;
+}
