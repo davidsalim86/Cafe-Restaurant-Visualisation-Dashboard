@@ -1,9 +1,13 @@
 # Group 7
 
 David Salim
+
 Ron Fu
+
 Sam Vuong
+
 Steven Bouios
+
 
 
 # Cafe & Restaurant Dashboard
