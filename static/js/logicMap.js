@@ -34,30 +34,21 @@ var myMap = L.map("map", {
 });
 
 // create circle layers
-const businessData = "/api/melbournebusinessdatamap";
+const indoorData = "/api/melbournebusinessdatamapindoor";
+const outdoorData = "/api/melbournebusinessdatamapoutdoor";
 
 function markerSize(capacity) { return capacity / 22 };
 
-var year2020 = new L.LayerGroup();
-var year2019 = new L.LayerGroup();
-var year2018 = new L.LayerGroup();
-var year2017 = new L.LayerGroup();
-var year2016 = new L.LayerGroup();
-var year2015 = new L.LayerGroup();
-var year2014 = new L.LayerGroup();
-var year2013 = new L.LayerGroup();
-var year2012 = new L.LayerGroup();
-var year2011 = new L.LayerGroup();
-var year2010 = new L.LayerGroup();
-var year2009 = new L.LayerGroup();
-var year2008 = new L.LayerGroup();
-var year2007 = new L.LayerGroup();
-var year2006 = new L.LayerGroup();
-var year2005 = new L.LayerGroup();
-var year2004 = new L.LayerGroup();
-var year2003 = new L.LayerGroup();
-var year2002 = new L.LayerGroup();
-d3.json(businessData).then(function (data) {
+var indoor2020 = new L.LayerGroup();
+var indoor2019 = new L.LayerGroup();
+var indoor2018 = new L.LayerGroup();
+var indoor2017 = new L.LayerGroup();
+var outdoor2020 = new L.LayerGroup();
+var outdoor2019 = new L.LayerGroup();
+var outdoor2018 = new L.LayerGroup();
+var outdoor2017 = new L.LayerGroup();
+
+d3.json(indoorData).then(function (data) {
     var features = data.features;
     var properties = features[0].properties
     console.log(properties)
@@ -76,7 +67,7 @@ d3.json(businessData).then(function (data) {
             default:
                 fillcolor = "#c2ff66";
         }
-        if (features[i].properties.census_year == 2020){
+        if (features[i].properties.census_year == 2020) {
             L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
                 fillOpacity: 1,
                 color: "black",
@@ -84,9 +75,9 @@ d3.json(businessData).then(function (data) {
                 opacity: 0.5,
                 fillColor: fillcolor,
                 radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2020);
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(indoor2020);
         }
-        else if (features[i].properties.census_year == 2019){
+        else if (features[i].properties.census_year == 2019) {
             L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
                 fillOpacity: 1,
                 color: "black",
@@ -94,9 +85,9 @@ d3.json(businessData).then(function (data) {
                 opacity: 0.5,
                 fillColor: fillcolor,
                 radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2019);
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(indoor2019);
         }
-        else if (features[i].properties.census_year == 2018){
+        else if (features[i].properties.census_year == 2018) {
             L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
                 fillOpacity: 1,
                 color: "black",
@@ -104,168 +95,80 @@ d3.json(businessData).then(function (data) {
                 opacity: 0.5,
                 fillColor: fillcolor,
                 radius: markerSize(features[i].properties.number_of_seats)
-            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2018);
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(indoor2018);
         }
-        // else if (features[i].properties.census_year == 2017){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2017);
-        // }
-        // else if (features[i].properties.census_year == 2016){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2016);
-        // }
-        // else if (features[i].properties.census_year == 2015){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2015);
-        // }
-        // else if (features[i].properties.census_year == 2014){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2014);
-        // }
-        // else if (features[i].properties.census_year == 2013){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2013);
-        // }
-        // else if (features[i].properties.census_year == 2012){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2012);
-        // }
-        // else if (features[i].properties.census_year == 2011){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2011);
-        // }
-        // else if (features[i].properties.census_year == 2010){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2010);
-        // }
-        // else if (features[i].properties.census_year == 2009){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2009);
-        // }
-        // else if (features[i].properties.census_year == 2008){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2008);
-        // }
-        // else if (features[i].properties.census_year == 2007){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2007);
-        // }
-        // else if (features[i].properties.census_year == 2006){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2006);
-        // }
-        // else if (features[i].properties.census_year == 2005){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2005);
-        // }
-        // else if (features[i].properties.census_year == 2004){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2004);
-        // }
-        // else if (features[i].properties.census_year == 2003){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2003);
-        // }
-        // else if (features[i].properties.census_year == 2002){
-        //     L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
-        //         fillOpacity: 1,
-        //         color: "black",
-        //         weight: 0.5,
-        //         opacity: 0.5,
-        //         fillColor: fillcolor,
-        //         radius: markerSize(features[i].properties.number_of_seats)
-        //     }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " +  features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(year2002);
-        // }
+        else if (features[i].properties.census_year == 2017) {
+            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+                fillOpacity: 1,
+                color: "black",
+                weight: 0.5,
+                opacity: 0.5,
+                fillColor: fillcolor,
+                radius: markerSize(features[i].properties.number_of_seats)
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(indoor2017);
+        }
+    }
+});
+
+d3.json(outdoorData).then(function (data) {
+    var features = data.features;
+    var properties = features[0].properties
+    console.log(properties)
+    for (var i = 0; i < features.length; i++) {
+        var fillcolor = "";
+        switch (true) {
+            case (features[i].properties.number_of_seats > 1500):
+                fillcolor = "#4d8000";
+                break;
+            case (features[i].properties.number_of_seats > 1000):
+                fillcolor = "#7acc00";
+                break;
+            case (features[i].properties.number_of_seats > 500):
+                fillcolor = "#a3ff1a";
+                break;
+            default:
+                fillcolor = "#c2ff66";
+        }
+        if (features[i].properties.census_year == 2020) {
+            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+                fillOpacity: 1,
+                color: "black",
+                weight: 0.5,
+                opacity: 0.5,
+                fillColor: fillcolor,
+                radius: markerSize(features[i].properties.number_of_seats)
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(outdoor2020);
+        }
+        else if (features[i].properties.census_year == 2019) {
+            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+                fillOpacity: 1,
+                color: "black",
+                weight: 0.5,
+                opacity: 0.5,
+                fillColor: fillcolor,
+                radius: markerSize(features[i].properties.number_of_seats)
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(outdoor2019);
+        }
+        else if (features[i].properties.census_year == 2018) {
+            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+                fillOpacity: 1,
+                color: "black",
+                weight: 0.5,
+                opacity: 0.5,
+                fillColor: fillcolor,
+                radius: markerSize(features[i].properties.number_of_seats)
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(outdoor2018);
+        }
+        else if (features[i].properties.census_year == 2017) {
+            L.circle([features[i].geometry.coordinates[1], features[i].geometry.coordinates[0]], {
+                fillOpacity: 1,
+                color: "black",
+                weight: 0.5,
+                opacity: 0.5,
+                fillColor: fillcolor,
+                radius: markerSize(features[i].properties.number_of_seats)
+            }).bindPopup("Trading Name: " + features[i].properties.trading_name + "<br> Seating Capacity: " + features[i].properties.number_of_seats + "<br>Census Year: " + features[i].properties.census_year).addTo(outdoor2017);
+        }
     }
 });
 
@@ -275,7 +178,7 @@ var legend = L.control({ position: "bottomright" });
 legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
     div.innerHTML += "<h4>Seat Capacity</h4>";
-    div.innerHTML += "<p style=\"background-color: #4d8000\"> > 1500</p>";
+    div.innerHTML += "<p style=\"background-color: #4d8000\"> 1500</p>";
     div.innerHTML += "<p style=\"background-color: #7acc00\"> 1000 - 1500</p>";
     div.innerHTML += "<p style=\"background-color: #a3ff1a\"> 500 - 1000</p>";
     div.innerHTML += "<p style=\"background-color: #c2ff66\"> 0 - 500</p>"
@@ -286,34 +189,57 @@ document.querySelector(".legend").style.background = "#f2f2f2";
 document.querySelector(".legend").style.padding = "0px 10px 0px 10px";
 
 // create layer control
-var baseMaps = {
-    Light: light,
-    Dark: dark,
-    Satellite: satellite
+var baseTree = {
+    label: 'Layer type',
+    children: [
+        {
+            label: 'Tile Layer',
+            children: [
+                { label: 'light', layer: light },
+                { label: 'dark', layer: dark },
+                { label: 'Satellite', layer: satellite },
+            ]
+        },
+    ]
 };
 
-var overlayMaps = {
-    "2020": year2020,
-    "2019": year2019,
-    "2018": year2018,
-    // "2017": year2017,
-    // "2016": year2016,
-    // "2015": year2015,
-    // "2014": year2014,
-    // "2013": year2013,
-    // "2012": year2012,
-    // "2011": year2011,
-    // "2010": year2010,
-    // "2009": year2009,
-    // "2008": year2008,
-    // "2007": year2007,
-    // "2006": year2006,
-    // "2005": year2005,
-    // "2004": year2004,
-    // "2003": year2003,
-    // "2002": year2002,
-};
+var overlaysTree = {
+    label: 'Seat type',
+    children: [
+        {
+            label: 'Indoor',
+            children: [
+                {
+                    label: 'Year',
+                    children: [
+                        { label: '2020', layer: indoor2020 },
+                        { label: '2019', layer: indoor2019 },
+                        { label: '2018', layer: indoor2018 },
+                        { label: '2017', layer: indoor2017 },
+                    ]
+                },
+            ]
+        }, {
+            label: 'Outdoor',
+            children: [
+                {
+                    label: 'Year',
+                    children: [
+                        { label: '2020', layer: outdoor2020 },
+                        { label: '2019', layer: outdoor2019 },
+                        { label: '2018', layer: outdoor2018 },
+                        { label: '2017', layer: outdoor2017 },
+                    ]
+                },
+            ]
+        }
+    ]
+}
 
-L.control.layers(baseMaps, overlayMaps, { collapsed: true }).addTo(myMap);
 
-year2020.addTo(myMap)
+L.control.layers.tree(baseTree, overlaysTree, { collapsed: true }).addTo(myMap);
+
+// L.Control.Layers.Tree.js is a custom js library used to create a tree structure for the layers layout in leaflet
+// https://github.com/jjimenezshaw/Leaflet.Control.Layers.Tree
+
+outdoor2020.addTo(myMap)

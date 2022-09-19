@@ -39,10 +39,17 @@ def map():
 def table():
     return render_template("table.html")
 
-# data for map
-@app.route("/api/melbournebusinessdatamap")
-def melbournebusinessdatamap():
-    database_df = pd.read_sql("Select y_coordinate, x_coordinate, census_year, trading_name, number_of_seats from melbourne_business",engine)
+# data for map indoor
+@app.route("/api/melbournebusinessdatamapindoor")
+def melbournebusinessdatamapindoor():
+    database_df = pd.read_sql("Select y_coordinate, x_coordinate, census_year, trading_name, number_of_seats from melbourne_business where seating_type = 'Seats - Indoor'",engine)
+    geo_json = to_geojson(df=database_df, lat='y_coordinate', lon='x_coordinate',properties=["census_year", "trading_name", "number_of_seats"])
+    return geo_json
+
+# data for map outdoor
+@app.route("/api/melbournebusinessdatamapoutdoor")
+def melbournebusinessdatamapoutdoor():
+    database_df = pd.read_sql("Select y_coordinate, x_coordinate, census_year, trading_name, number_of_seats from melbourne_business where seating_type = 'Seats - Outdoor'",engine)
     geo_json = to_geojson(df=database_df, lat='y_coordinate', lon='x_coordinate',properties=["census_year", "trading_name", "number_of_seats"])
     return geo_json
 
