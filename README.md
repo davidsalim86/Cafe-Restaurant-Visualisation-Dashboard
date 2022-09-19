@@ -1,17 +1,11 @@
 # Group 7
-
-David Salim
-
-Ron Fu
-
-Sam Vuong
-
-Steven Bouios
-
-
+- David Salim
+- Ron Fu
+- Sam Vuong
+- Steven Bouios
 
 # Cafe & Restaurant Dashboard
-The aim of this project is to create visualisation on the quantity of seating and establishment of cafe and restaurant in the City of Melbourne.  
+The aim of this project is to create visualisation on the quantity of seating and establishment of cafe and restaurant in the City of Melbourne from 2002 to 2020.  
 
 # Method
 - API call from melbourne.vic.gov.au
