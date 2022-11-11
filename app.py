@@ -1,8 +1,5 @@
 import pandas as pd
-import numpy as np
-
-from flask import Flask, jsonify, render_template
-from sqlalchemy.orm import Session
+from flask import Flask, render_template
 from sqlalchemy import create_engine
 from pandas_geojson import to_geojson
 from flask_sqlalchemy import SQLAlchemy
