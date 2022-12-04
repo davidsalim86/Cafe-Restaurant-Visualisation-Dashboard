@@ -31,15 +31,15 @@ Jupyter Notebook, Pandas, Sqlite, Flask, HTML, Leaflet, Sqlalchemy, Rslider, Her
 David Salim, Ron Fu, Sam Vuong, Steven Bouios
 
 ## Application Screenshots
-## Dashboard
+### Dashboard
 ![page_1.1.png](image/page_1.1.png) 
 ![page_1.2.png](image/page_1.2.png) 
 
-## Analysis
+### Analysis
 ![page_2.png](image/page_2.png) 
 
-## Data Table
+### Data Table
 ![page_3.png](image/page_3.png) 
 
-## Seating Map
+### Seating Map
 ![page_4.png](image/page_4.png) 
