@@ -2,7 +2,7 @@
 
 ## Aim
 
-The aim of this project is to create visualisation on the quantity of seating and establishment of cafe and restaurant in the City of Melbourne from 2002 to 2020.  
+The aim of this project is to create visualisation on the number of establishment and capacity of cafe and restaurant in the City of Melbourne from 2002 to 2020.  
 
 
 ## Data Source
